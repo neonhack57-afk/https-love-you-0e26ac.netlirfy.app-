@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Untuk Safa Aulia ❤️</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #ff416c, #ff4b8b);
+      color: white;
+    }
+
+    .page {
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 25px;
+    }
+
+    /* HALAMAN AWAL */
+
+    #opening {
+      display: flex;
+      flex-direction: column;
+      animation: fadeIn 1.5s;
+    }
+
+    .envelope {
+      font-size: 90px;
+      animation: bounce 1.5s infinite;
+      margin-bottom: 25px;
+    }
+
+    #opening h1 {
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+
+    #opening p {
+      font-size: 17px;
+      margin-bottom: 30px;
+    }
+
+    button {
+      border: none;
+      padding: 15px 30px;
+      border-radius: 40px;
+      background: white;
+      color: #ff416c;
+      font-size: 17px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 8px 25px rgba(0,0,0,.25);
+      transition: .3s;
+    }
+
+    button:hover {
+      transform: scale(1.08);
+    }
+
+    /* HALAMAN UTAMA */
+
+    #main {
+      display: none;
+      flex-direction: column;
+    }
+
+    .small {
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+
+    .heart {
+      width: 150px;
+      height: 150px;
+      background: #ff1744;
+      position: relative;
+      transform: rotate(-45deg);
+      margin: 80px auto 70px;
+      animation: heartbeat 1.1s infinite;
+      box-shadow: 0 0 45px rgba(255,255,255,.45);
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      background: #ff1744;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -75px;
+      left: 0;
+    }
+
+    .heart::after {
+      top: 0;
+      left: 75px;
+    }
+
+    .heart-text {
+      position: absolute;
+      z-index: 10;
+      width: 200px;
+      left: -25px;
+      top: 55px;
+      transform: rotate(45deg);
+      font-size: 22px;
+      font-weight: bold;
+      white-space: nowrap;
+      text-shadow: 2px 2px 5px rgba(0,0,0,.3);
+    }
+
+    #main h1 {
+      font-size: 30px;
+      margin-bottom: 15px;
+    }
+
+    #message {
+      min-height: 110px;
+      max-width: 360px;
+      line-height: 1.7;
+      font-size: 17px;
+    }
+
+    #surprise {
+      display: none;
+      margin-top: 25px;
+      font-size: 18px;
+      line-height: 1.7;
+      animation: fadeIn 1s;
+    }
+
+    .floating-heart {
+      position: fixed;
+      bottom: -50px;
+      pointer-events: none;
+      animation: floatUp linear forwards;
+      z-index: 20;
+    }
+
+    @keyframes heartbeat {
+      0%, 100% {
+        transform: rotate(-45deg) scale(1);
+      }
+
+      50% {
+        transform: rotate(-45deg) scale(1.15);
+      }
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-15px);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes floatUp {
+      from {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+      }
+
+      to {
+        transform: translateY(-115vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- PEMBUKA -->
+
+  <div class="page" id="opening">
+
+    <div class="envelope">💌</div>
+
+    <h1>Hai, Safa Aulia ❤️</h1>
+
+    <p>
+      Ada sesuatu yang ingin aku kasih tahu...
+      <br>
+      Tapi kamu harus buka dulu suratnya 😚
+    </p>
+
+    <button onclick="openLetter()">
+      Buka Surat 💌
+    </button>
+
+  </div>
+
+
+  <!-- HALAMAN UTAMA -->
+
+  <div class="page" id="main">
+
+    <div class="small">
+      Untuk seseorang yang sangat spesial...
+    </div>
+
+    <div class="heart">
+      <div class="heart-text">
+        I LOVE YOU
+      </div>
+    </div>
+
+    <h1>Safa Aulia ❤️</h1>
+
+    <p id="message"></p>
+
+    <button onclick="surprise()">
+      Jangan Klik Ini 😏
+    </button>
+
+    <div id="surprise">
+      Kalau kamu sudah sampai sini...
+      <br><br>
+
+      berarti kamu memang kepo 😂❤️
+      <br><br>
+
+      Tapi sebenarnya aku cuma mau bilang:
+      <br>
+
+      <strong>
+        Aku sayang kamu, Safa Aulia. ❤️
+      </strong>
+
+      <br><br>
+
+      Jangan bosen sama aku ya 🥺💕
+    </div>
+
+  </div>
+
+
+  <script>
+
+    const text =
+      "Safa Aulia, kamu tahu nggak? Dari sekian banyak orang di dunia ini, aku bersyukur banget bisa mengenal kamu. Kamu bukan cuma seseorang yang aku sayang, tapi juga seseorang yang selalu berhasil membuat hariku jadi lebih indah. ❤️";
+
+    let i = 0;
+
+    function openLetter() {
+
+      document.getElementById("opening").style.display = "none";
+
+      document.getElementById("main").style.display = "flex";
+
+      typeWriter();
+
+      startHearts();
+    }
+
+
+    function typeWriter() {
+
+      if (i < text.length) {
+
+        document.getElementById("message").innerHTML += text.charAt(i);
+
+        i++;
+
+        setTimeout(typeWriter, 45);
+
+      }
+
+    }
+
+
+    function surprise() {
+
+      document.getElementById("surprise").style.display = "block";
+
+      for (let i = 0; i < 25; i++) {
+
+        setTimeout(createHeart, i * 100);
+
+      }
+
+    }
+
+
+    function createHeart() {
+
+      const heart = document.createElement("div");
+
+      heart.className = "floating-heart";
+
+      const hearts = ["❤️", "💖", "💕", "💗", "💓", "💘"];
+
+      heart.innerHTML =
+        hearts[Math.floor(Math.random() * hearts.length)];
+
+      heart.style.left =
+        Math.random() * 100 + "vw";
+
+      heart.style.fontSize =
+        (15 + Math.random() * 30) + "px";
+
+      heart.style.animationDuration =
+        (3 + Math.random() * 4) + "s";
+
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 7000);
+
+    }
+
+
+    function startHearts() {
+
+      setInterval(createHeart, 500);
+
+    }
+
+  </script>
+
+</body>
+</html>
